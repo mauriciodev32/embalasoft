@@ -1,0 +1,275 @@
+{
+	"info": {
+		"_postman_id": "067bdeed-3d4c-468e-bb1f-1bedffe667a8",
+		"name": "Embalasoft",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13013899"
+	},
+	"item": [
+		{
+			"name": "NovoLivro",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, /"
+					},
+					{
+						"key": "accept-language",
+						"value": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7"
+					},
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOiIyMSIsIm5vbWUiOiJNYXJpYSBNZWRlaXJvcyIsInBlcmZpbCI6IlVzdcOhcmlvIiwicGVyZmlsSWQiOiIzIiwiZW1haWwiOiJtYXJpYW1Ab3V0b2ZmdGhlYm94LnRlY2giLCJlaWQiOiIyIiwibmJmIjoxNzMzNzU2MTc0LCJleHAiOjE3MzM3OTkzNzQsImlhdCI6MTczMzc1NjE3NH0.w0qzk6VnH-QivziVCVv3qDAUAXEv7WOI0loST0kEw2M"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json"
+					},
+					{
+						"key": "origin",
+						"value": "http://localhost:4200"
+					},
+					{
+						"key": "priority",
+						"value": "u=1, i"
+					},
+					{
+						"key": "referer",
+						"value": "http://localhost:4200/"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "cross-site"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Titulo\": \"Romeu e Julieta\",\r\n  \"Autor\": \"William Shakespeare\",\r\n  \"Genero\": \"Terror\",\r\n  \"Ano\": 1949\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7198/api/livros",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7198",
+					"path": [
+						"api",
+						"livros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListarTodosLivros",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, /"
+					},
+					{
+						"key": "accept-language",
+						"value": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7"
+					},
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOiIyMSIsIm5vbWUiOiJNYXJpYSBNZWRlaXJvcyIsInBlcmZpbCI6IlVzdcOhcmlvIiwicGVyZmlsSWQiOiIzIiwiZW1haWwiOiJtYXJpYW1Ab3V0b2ZmdGhlYm94LnRlY2giLCJlaWQiOiIyIiwibmJmIjoxNzMzNzU2MTc0LCJleHAiOjE3MzM3OTkzNzQsImlhdCI6MTczMzc1NjE3NH0.w0qzk6VnH-QivziVCVv3qDAUAXEv7WOI0loST0kEw2M"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json"
+					},
+					{
+						"key": "origin",
+						"value": "http://localhost:4200"
+					},
+					{
+						"key": "priority",
+						"value": "u=1, i"
+					},
+					{
+						"key": "referer",
+						"value": "http://localhost:4200/"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "cross-site"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Titulo\": \"Romeu e Julieta\",\r\n  \"Autor\": \"William Shakespeare\",\r\n  \"Genero\": \"Terror\",\r\n  \"Ano\": 1949\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7198/api/livros",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7198",
+					"path": [
+						"api",
+						"livros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListarLivroPorId",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, /"
+					},
+					{
+						"key": "accept-language",
+						"value": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7"
+					},
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOiIyMSIsIm5vbWUiOiJNYXJpYSBNZWRlaXJvcyIsInBlcmZpbCI6IlVzdcOhcmlvIiwicGVyZmlsSWQiOiIzIiwiZW1haWwiOiJtYXJpYW1Ab3V0b2ZmdGhlYm94LnRlY2giLCJlaWQiOiIyIiwibmJmIjoxNzMzNzU2MTc0LCJleHAiOjE3MzM3OTkzNzQsImlhdCI6MTczMzc1NjE3NH0.w0qzk6VnH-QivziVCVv3qDAUAXEv7WOI0loST0kEw2M"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json"
+					},
+					{
+						"key": "origin",
+						"value": "http://localhost:4200"
+					},
+					{
+						"key": "priority",
+						"value": "u=1, i"
+					},
+					{
+						"key": "referer",
+						"value": "http://localhost:4200/"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "cross-site"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Titulo\": \"Romeu e Julieta\",\r\n  \"Autor\": \"William Shakespeare\",\r\n  \"Genero\": \"Terror\",\r\n  \"Ano\": 1949\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7198/api/livros/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7198",
+					"path": [
+						"api",
+						"livros",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
