@@ -1,4 +1,6 @@
+using LivrosAPI.DTO;
 using LivrosAPI.Models;
+using LivrosAPI.Repository;
 using LivrosAPI.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,11 +12,14 @@ namespace LivrosAPI.Controllers
     {
        
         private readonly LivroService _service;
+        private readonly LivroRepository _repository;
 
-        public LivrosController(LivroService service) 
+        public LivrosController(LivroService service, LivroRepository repository) 
         {
             _service = service;
+            _repository = repository;
         }
+
 
         [HttpGet]
         public IActionResult GetAll()
@@ -31,11 +36,19 @@ namespace LivrosAPI.Controllers
             return Ok(livro);
         }
 
+        //[HttpPost]
+        //public IActionResult Add([FromBody] Livro livro)
+        //{
+        //    _service.Add(livro);
+        //    return CreatedAtAction(nameof(GetById), new { id = livro.Id }, livro);
+        //}
+
         [HttpPost]
-        public IActionResult Add([FromBody] Livro livro)
+        public IActionResult NovoLivro([FromBody] LivroDTO livro)
         {
-            _service.Add(livro);
-            return CreatedAtAction(nameof(GetById), new { id = livro.Id }, livro);
+            _repository.AddNovoLivro(livro);
+            return Ok();
+            //return CreatedAtAction(nameof(GetById), new { id = livro.Id }, livro);
         }
 
         [HttpPut("{id}")]

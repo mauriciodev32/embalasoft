@@ -1,4 +1,5 @@
 ﻿using LivrosAPI.Data;
+using LivrosAPI.DTO;
 using LivrosAPI.Models;
 
 namespace LivrosAPI.Repository
@@ -22,11 +23,15 @@ namespace LivrosAPI.Repository
             _ctx.SaveChanges();
         }
 
-        public void Update(Livro livro) 
+        public void Update(Livro livro)
         {
-            _ctx.Livros.Update(livro);
-            _ctx.SaveChanges(); 
+            var livroExistente = _ctx.Livros.Find(livro.Id);
+            if (livroExistente == null) return;
+
+            _ctx.Entry(livroExistente).CurrentValues.SetValues(livro);
+            _ctx.SaveChanges();
         }
+
 
         public void Delete(int id) 
         {
@@ -36,6 +41,21 @@ namespace LivrosAPI.Repository
                 _ctx.Livros.Remove(livro);
                 _ctx.SaveChanges();
             }
+        }
+
+        public void AddNovoLivro(LivroDTO dto) 
+        {
+            var novoLivro = new Livro
+            {
+                Titulo = dto.Titulo,
+                Autor = dto.Autor,
+                Genero = dto.Genero,
+                Ano = dto.Ano,
+            };
+
+            _ctx.Livros.Add(novoLivro);
+            _ctx.SaveChanges();
+            
         }
     }
 }
