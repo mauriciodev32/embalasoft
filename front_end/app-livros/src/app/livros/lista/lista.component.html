@@ -1,0 +1,29 @@
+<div class="container mt-4">
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h2>📚 Lista de Livros</h2>
+  <button class="btn btn-primary" (click)="addNovoLivro()">➕ Novo Livro</button>
+</div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Autor</th>
+        <th>Gênero</th>
+        <th>Ano</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let livro of livros">
+        <td>{{ livro.titulo }}</td>
+        <td>{{ livro.autor }}</td>
+        <td>{{ livro.genero }}</td>
+        <td>{{ livro.ano }}</td>
+        <td>
+            <button class="btn btn-sm btn-warning me-2" (click)="editarLivro(livro)">✏️</button>
+            <button class="btn btn-sm btn-danger" *ngIf="livro.id !== undefined" (click)="excluirLivro(livro.id)">🗑️</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

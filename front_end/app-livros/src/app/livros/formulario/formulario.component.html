@@ -1,0 +1,26 @@
+<div class="container mt-4">
+<h2>📝 {{ modoTela === 'edit' ? 'Editar Livro' : 'Cadastrar Livro' }}</h2>
+  <form [formGroup]="form" (ngSubmit)="salvar()">
+    <div class="mb-3">
+      <label>Título</label>
+      <input class="form-control" formControlName="titulo">
+    </div>
+    <div class="mb-3">
+      <label>Autor</label>
+      <input class="form-control" formControlName="autor">
+    </div>
+
+    <div class="mb-3">
+      <label>Gênero</label>
+      <input class="form-control" formControlName="genero">
+    </div>
+
+    <div class="mb-3">
+      <label>Ano</label>
+      <input type="number" class="form-control" formControlName="ano">
+    </div>
+        <button class="btn btn-primary" type="submit">
+        {{ modoTela === 'edit' ? 'Alterar' : 'Salvar' }}
+        </button>
+  </form>
+</div>
